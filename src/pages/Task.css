@@ -1,0 +1,40 @@
+/* REACT 不像Vue一样，它不支持CSS私有化，所以写样式的时候，要注意防止样式冲突
+*  1. 可以基于Less/Sass编写样式（注意）
+*  2. 也可以基于一些插件完成样式私有化
+*/
+.taskBox {
+  box-sizing: border-box;
+  width: 1000px;
+  margin: 20px auto;
+}
+.taskBox .headerBox {
+  position: relative;
+  line-height: 60px;
+}
+.taskBox .headerBox h2 {
+  font-size: 20px;
+  font-weight: bold;
+}
+.taskBox .headerBox .ant-btn-primary {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.taskBox .navBox {
+  line-height: 60px;
+}
+.taskBox .navBox .ant-tag {
+  line-height: 30px;
+  padding: 0 15px;
+  cursor: pointer;
+}
+.taskBox .ant-table-wrapper .ant-table-cell .finish {
+  text-decoration: line-through;
+}
+.modalBox .ant-modal-body {
+  padding: 12px;
+}
+.modalBox .ant-modal-body p {
+  line-height: 35px;
+}

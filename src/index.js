@@ -1,17 +1,19 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import ReactDOM from 'react-dom'
+import { ConfigProvider } from 'antd';
+// 由于 antd 组件的默认文案是英文，所以需要修改为中文
+import zhCN from 'antd/lib/locale/zh_CN';
+// import 'antd/dist/antd.css';
+// 可以修改主题色
+import 'antd/dist/antd.less'
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+// 导入组件
+import Task from './pages/Task'
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+// 导入公共样式
+import './assets/reset.min.css';
+import './assets/common.less'
+
+ReactDOM.render(<ConfigProvider locale={zhCN}>
+  <Task></Task>
+</ConfigProvider>, document.getElementById('root'))
